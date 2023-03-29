@@ -3,10 +3,11 @@ module cam_pio_utils
 
   use pio,          only: io_desc_t, iosystem_desc_t, file_desc_t, var_desc_t
   use pio,          only: pio_freedecomp, pio_rearr_subset, pio_rearr_box
+  use pio,          only: pio_init, PIO_rearr_subset
   use shr_kind_mod, only: r4 => shr_kind_r4, r8 => shr_kind_r8
   use cam_logfile,  only: iulog
   use perf_mod,     only: t_startf, t_stopf
-  use spmd_utils,   only: masterproc
+  use spmd_utils,   only: mpicom, iam, npes, masterproc
 
   implicit none
   private
@@ -47,6 +48,7 @@ module cam_pio_utils
 
   ! This variable should be private ?
   type(iosystem_desc_t), pointer, public :: pio_subsystem => null()
+  type(iosystem_desc_t), private, target :: priv_pio_subsystem
 
   ! Some private string length parameters
   integer, parameter :: errormsg_str_len = 128
@@ -468,13 +470,18 @@ contains
     use shr_pio_mod,  only: shr_pio_getioformat
     use cam_instance, only: atm_id
 
-    pio_subsystem => shr_pio_getiosys(atm_id)
+    !pio_subsystem => shr_pio_getiosys(atm_id)
     pio_iotype =  shr_pio_getiotype(atm_id)
     pio_ioformat = shr_pio_getioformat(atm_id)
+
+    ! mpicom, iam, npes, masterproc
+    call PIO_init(iam, mpicom, npes, 0, 1, PIO_rearr_subset, priv_pio_subsystem, 1)
+    pio_subsystem => priv_pio_subsystem
 
     if (masterproc) then
        write(iulog,*)' '
        write(iulog,*)'Initialize PIO subsystem:'
+       write(iulog,*)' also called PIO init '
        write(iulog,*)'  iotype  = ', pio_iotype
        write(iulog,*)'  ioformat  = ', pio_ioformat
     end if
