@@ -517,6 +517,29 @@
     <lname>HIST_CAM60%WXIED%SDYN_CLM50%SP_CICE%PRES_DOCN%DOM_MOSART_SGLC_SWAV</lname>
   </compset>
 
+  <!-- ****************************** -->
+  <!-- HYDROS compsets - CMCC  -->
+  <!-- ****************************** -->
+
+  <compset>
+    <alias>FWcmHISTs</alias>
+    <lname>HIST_CAM60%WCSC_CLM51%SP_CICE%PRES_DOCN%DOM_HYDROS_SGLC_SWAV</lname>
+    <science_support grid="f05_f05_mn0253"/>
+  </compset>
+
+  <compset>
+    <alias>FWcmHISTb</alias>
+    <lname>HIST_CAM60%WCSC_CLM51%BGC_CICE%PRES_DOCN%DOM_HYDROS_SGLC_SWAV</lname>
+    <science_support grid="f05_f05_mn0253"/>
+  </compset>
+
+  <compset>
+    <alias>FWcmHISTbc</alias>
+    <lname>HIST_CAM60%WCSC_CLM51%BGC-CROP_CICE%PRES_DOCN%DOM_HYDROS_SGLC_SWAV</lname>
+    <science_support grid="f05_f05_mn0253"/>
+  </compset>
+
+
   <!-- ENTRIES -->
 
   <entries>
