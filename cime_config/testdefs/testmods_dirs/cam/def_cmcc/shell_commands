@@ -6,4 +6,3 @@
 ./xmlchange MOSART_SIM_YEAR=1980
 ./xmlchange RUN_STARTDATE=1980-01-01
 ./xmlchange CLM_FORCE_COLDSTART=on
-./xmlchange NTASKS=864
