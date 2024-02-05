@@ -1,0 +1,77 @@
+
+<?xml version="1.0"?>
+<namelist_defaults>
+
+<!-- solar file -->
+
+  <solar_irrad_data_file> 'atm/cam/solar/SolarForcingCMIP6_18491230-23000102_c20200615.nc' </solar_irrad_data_file>
+
+<!-- tracer file -->
+  <tracer_cnst_datapath     >   'atm/cam/tracer_cnst'                                        </tracer_cnst_datapath>
+  <tracer_cnst_file>tracer_cnst_halons_3D_L70_2014-2101_CMIP6-SSP5-8.5_c190307.nc</tracer_cnst_file>
+  <tracer_cnst_specifier    >   'O3','OH','NO3','HO2','HALONS'                                        </tracer_cnst_specifier>
+  <tracer_cnst_type         >   'INTERP_MISSING_MONTHS'                                      </tracer_cnst_type>
+  <tracer_cnst_filelist     >   ''                                                           </tracer_cnst_filelist> 
+
+<!-- upper atmos forcings -->
+<waccm_forcing_type>INTERP_MISSING_MONTHS</waccm_forcing_type>
+<waccm_forcing_file>SCWACCM_forcing_zm_L70_2014-2101_SSP5-8.5_c20240131.nc</waccm_forcing_file>
+<waccm_forcing_datapath>atm/waccm/waccm_forcing</waccm_forcing_datapath>
+
+<!-- ozone file -->
+    <prescribed_ozone_datapath>   'atm/cam/ozone_strataero'  </prescribed_ozone_datapath>
+    <prescribed_ozone_file>ozone_strataero_WACCM_L70_zm5day_2015-2100_SSP585_c190529.nc</prescribed_ozone_file>
+    <prescribed_ozone_name>   'O3'       </prescribed_ozone_name>
+    <prescribed_ozone_type>   'SERIAL'   </prescribed_ozone_type>
+
+<!-- strato aerosol file -->
+    <prescribed_strataero_type    >   'SERIAL'      </prescribed_strataero_type>
+    <prescribed_strataero_datapath>   'atm/cam/ozone_strataero'       </prescribed_strataero_datapath>
+    <prescribed_strataero_file>ozone_strataero_WACCM_L70_zm5day_2015-2100_SSP585_c190529.nc</prescribed_strataero_file>
+    <prescribed_strataero_use_chemtrop> .true.  </prescribed_strataero_use_chemtrop>
+
+<!-- emission files -->
+
+    <srf_emis_type            >    INTERP_MISSING_MONTHS  </srf_emis_type>
+    <ext_frc_type             >    INTERP_MISSING_MONTHS  </ext_frc_type>
+
+    <h2o_ch4ox_ext_file>atm/cam/chem/emis/elev/H2OemissionCH4oxidationx2_3D_L70_2014-2101_CMIP6-SSP5-8.5_c190307.nc</h2o_ch4ox_ext_file>
+    <dms_ot_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-SSP_DMS_other_surface_mol_175001-210101_0.9x1.25_c20190224.nc</dms_ot_srf_file>
+    <dms_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_DMS_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</dms_bb_srf_file>
+    <so2_ag_sh_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_SO2_anthro-ag-ship-res_surface_mol_175001-210101_0.9x1.25_c20190224.nc</so2_ag_sh_file>
+    <so2_an_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_SO2_anthro-ene_surface_mol_175001-210101_0.9x1.25_c20190224.nc</so2_an_srf_file>
+    <so2_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_SO2_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</so2_bb_srf_file>
+    <so4_a1_an_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_so4_a1_anthro-ag-ship_surface_mol_175001-210101_0.9x1.25_c20190224.nc</so4_a1_an_srf_file>
+    <so4_a1_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_so4_a1_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</so4_a1_bb_srf_file>
+    <so4_a2_an_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_so4_a2_anthro-res_surface_mol_175001-210101_0.9x1.25_c20190224.nc</so4_a2_an_srf_file>
+    <num_a1_sh_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_so4_a1_anthro-ag-ship_surface_mol_175001-210101_0.9x1.25_c20190224.nc</num_a1_sh_srf_file>
+    <num_a2_an_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_so4_a2_anthro-res_surface_mol_175001-210101_0.9x1.25_c20190224.nc</num_a2_an_srf_file>
+    <bc_a4_an_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_bc_a4_anthro_surface_mol_175001-210101_0.9x1.25_c20190224.nc</bc_a4_an_srf_file>
+    <num_a4_bc_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_bc_a4_anthro_surface_mol_175001-210101_0.9x1.25_c20190224.nc</num_a4_bc_srf_file>
+    <pom_a4_an_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_pom_a4_anthro_surface_mol_175001-210101_0.9x1.25_c20190224.nc</pom_a4_an_srf_file>
+    <num_a4_oc_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_pom_a4_anthro_surface_mol_175001-210101_0.9x1.25_c20190224.nc</num_a4_oc_srf_file>
+    <num_a1_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_so4_a1_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</num_a1_bb_srf_file>
+    <bc_a4_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_bc_a4_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</bc_a4_bb_srf_file>
+    <num_a4_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_bc_a4_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</num_a4_bb_srf_file>
+    <pom_a4_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_pom_a4_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</pom_a4_bb_srf_file>
+    <num_pom_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_pom_a4_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</num_pom_bb_srf_file>
+    <soag_an_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_SOAGx1.5_anthro_surface_mol_175001-210101_0.9x1.25_c20190224.nc</soag_an_srf_file>
+    <soag_bg_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_SOAGx1.5_biogenic_surface_mol_175001-210101_0.9x1.25_c20190226.nc</soag_bg_srf_file>
+    <soag_bb_srf_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_SOAGx1.5_bb_surface_mol_175001-210101_0.9x1.25_c20190224.nc</soag_bb_srf_file>
+
+    <!-- other emissions files can be needed, but need first to be downloaded, since not used before -->
+    
+    <so4_a1_an_ext_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_so4_a1_anthro-ene_vertical_mol_175001-210101_0.9x1.25_c20190224.nc</so4_a1_an_ext_file>
+    <num_a1_an_ext_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_so4_a1_anthro-ene_vertical_mol_175001-210101_0.9x1.25_c20190224.nc</num_a1_an_ext_file>
+
+    <bc_a4_ar_ext_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_bc_a4_aircraft_vertical_mol_175001-210101_0.9x1.25_c20190224.nc</bc_a4_ar_ext_file>
+    <num_a4_ar_ext_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_num_bc_a4_aircraft_vertical_mol_175001-210101_0.9x1.25_c20190224.nc</num_a4_ar_ext_file>
+    <so2_ar_ext_file>atm/cam/chem/emis/emissions_ssp585/emissions-cmip6-ScenarioMIP_IAMC-REMIND-MAGPIE-ssp585-1-1_SO2_aircraft_vertical_mol_175001-210101_0.9x1.25_c20190224.nc</so2_ar_ext_file>
+
+    <!-- GHG concentration -->
+    <scenario_ghg            >    'CHEM_LBC_FILE'   </scenario_ghg>
+    <flbc_file>atm/waccm/lb/LBC_2014-2500_CMIP6_SSP585_0p5degLat_GlobAnnAvg_c190301.nc</flbc_file>
+    <flbc_type>'SERIAL'</flbc_type>
+    <flbc_list>'CO2','CH4','N2O','CFC11eq','CFC12'</flbc_list>
+
+</namelist_defaults>
